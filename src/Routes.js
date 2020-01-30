@@ -5,10 +5,10 @@ const ErrorHandler = require("./helpers/ErrorHelper");
 
 const app = Router();
 
-app.get("/:user", CurriculoController.getCurriculo);
+app.get("/curriculo/:user", CurriculoController.getCurriculo);
 app.use(NotFound);
 app.use((err, req, res, next) => {
     if (!err.statusCode) err.statusCode = 500;
-    ErrorHandler(err, res);
+    ErrorHandler.errorHandle(err, res);
 });
 module.exports = app;

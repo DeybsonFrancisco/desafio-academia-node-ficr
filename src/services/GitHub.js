@@ -11,7 +11,7 @@ const getGitHubUser = async user => {
 const getGitHubRepo = async user => {
     try {
         const data = await Axios.get(
-            `https://api.github.com/users/${user}/repos`
+            `https://api.github.com/users/${user}/repos?direction=desc`
         );
         return data.data;
     } catch (err) {
