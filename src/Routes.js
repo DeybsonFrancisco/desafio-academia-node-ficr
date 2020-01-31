@@ -7,7 +7,7 @@ const path = require("path");
 
 const app = Router();
 
-app.get("/curriculo", CurriculoController.getCurriculo);
+app.get("/api/curriculo", CurriculoController.getCurriculo);
 
 app.use(NotFound);
 app.use((err, req, res, next) => {
