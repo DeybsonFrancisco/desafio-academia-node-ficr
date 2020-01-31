@@ -29,7 +29,6 @@ const getGitHubRepo = async user => {
                 }
             }
         );
-        );
         return data.data;
     } catch (err) {
         return err;
