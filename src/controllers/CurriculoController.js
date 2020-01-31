@@ -19,7 +19,7 @@ exports.getCurriculo = async (req, res, next) => {
 
         if (!result[0].response) {
             // eslint-disable-next-line camelcase
-            const { name, avatar_url, html_url, bio, company } = result[0];
+            const { name, avatar_url, html_url, company, bio } = result[0];
             userGit = {
                 name,
                 avatar_url,
