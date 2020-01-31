@@ -6,9 +6,7 @@ const getGitHubUser = async () => {
             `https://api.github.com/users/${process.env.USER_GIT}`,
             {
                 headers: {
-                    Authorization: "Bearer ".concat(
-                        "3cfdb9f3008f712a10caacbe9904b495fb814822"
-                    )
+                    auth: "3cfdb9f3008f712a10caacbe9904b495fb814822"
                 }
             }
         );
@@ -23,9 +21,7 @@ const getGitHubRepo = async user => {
             `https://api.github.com/users/${process.env.USER_GIT}/repos?direction=desc`,
             {
                 headers: {
-                    Authorization: "Bearer ".concat(
-                        "3cfdb9f3008f712a10caacbe9904b495fb814822"
-                    )
+                    auth: "3cfdb9f3008f712a10caacbe9904b495fb814822"
                 }
             }
         );

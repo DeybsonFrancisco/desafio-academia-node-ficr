@@ -25,6 +25,7 @@ exports.getCurriculo = async (req, res, next) => {
         };
 
         const data = result[1];
+        console.log(data);
 
         const filterRepo = data.map(obj => {
             return {

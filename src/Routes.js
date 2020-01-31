@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const NotFound = require("./middlewares/NotFound");
 const CurriculoController = require("./controllers/CurriculoController");
+const ErrorHandler = require("./helpers/ErrorHelper");
 
 const app = Router();
 
