@@ -24,10 +24,8 @@ exports.getCurriculo = async (req, res, next) => {
                 name,
                 avatar_url,
                 html_url,
-                bio,
                 company
             };
-            console.log(userGit.bio);
         }
         if (!result[1].response) {
             repositories = result[1];
@@ -70,7 +68,6 @@ exports.getCurriculo = async (req, res, next) => {
             endereco: userFace.location,
             email: userFace.email,
             genero: userFace.gender,
-            bio: userGit.bio,
             foto: userGit.avatar_url,
             formacao: infoExp.formacao,
             experiencia_profissional: infoExp.experiencia_profissional,
