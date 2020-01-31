@@ -7,14 +7,15 @@ const path = require("path");
 exports.getCurriculo = async (req, res, next) => {
     try {
         const result = await Promise.all([
-            GitHub.getGitHubUser(),
-            GitHub.getGitHubRepo(),
+            await GitHub.getGitHubUser(),
+            await GitHub.getGitHubRepo(),
             Facebook(),
             FileHelper.get({
                 path: path.resolve(__dirname, "..", "..", "formacao.json")
             })
         ]);
 
+        console.log(result[1]);
         // eslint-disable-next-line camelcase
         const { avatar_url, html_url, company, bio } = result[0];
         const userGit = {
@@ -25,7 +26,6 @@ exports.getCurriculo = async (req, res, next) => {
         };
 
         const data = result[1];
-        console.log(data);
 
         const filterRepo = data.map(obj => {
             return {
