@@ -25,6 +25,7 @@ exports.getCurriculo = async (req, res, next) => {
         };
 
         const data = result[1];
+        console.log(data);
 
         const filterRepo = data.map(obj => {
             return {
@@ -58,7 +59,7 @@ exports.getCurriculo = async (req, res, next) => {
         const infoExp = result[3];
 
         return res.status(200).json({
-            nome: userFace.name,
+            /* nome: userFace.name,
             data_nascimento: userFace.birthday,
             endereco: userFace.location,
             email: userFace.email,
@@ -74,7 +75,8 @@ exports.getCurriculo = async (req, res, next) => {
                     repositories[1],
                     repositories[2]
                 ]
-            }
+            } */
+            userFace
         });
     } catch (err) {
         next(err);
