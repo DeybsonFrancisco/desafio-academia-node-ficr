@@ -24,6 +24,7 @@ exports.getCurriculo = async (req, res, next) => {
                 name,
                 avatar_url,
                 html_url,
+                bio,
                 company
             };
         }
@@ -68,7 +69,8 @@ exports.getCurriculo = async (req, res, next) => {
             endereco: userFace.location,
             email: userFace.email,
             genero: userFace.gender,
-            foto: userGit.avatar_url,
+            bio: userGit.bio || null,
+            foto: userGit.avatar_url || null,
             formacao: infoExp.formacao,
             experiencia_profissional: infoExp.experiencia_profissional,
             github: {
