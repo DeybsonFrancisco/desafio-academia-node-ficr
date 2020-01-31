@@ -1,31 +1,11 @@
-"formacao": [
-    {
-      "instituicao": "ficr",
-      "curso": "ADS",
-      "inicio": "12/12/2014",
-      "termino": "01/04/2020"
-    }
-  ],
-  "experiencia_profissional": [
-    {
-      "empresa": "Accenture",
-      "funcao": "Engenheiro de Software",
-      "atividade": "Desenvolver api de integraçoes com servicos externos",
-      "inicio": "12/12/2014",
-      "termino": "atual"
-    },
-    {
-      "empresa": "Ficr",
-      "funcao": "Engenheiro de Software",
-      "atividade": "Desenvolver api de integraçoes com servicos externos",
-      "inicio": "12/12/2014",
-      "termino": "atual"
-    },
-    {
-      "empresa": "Google",
-      "funcao": "Engenheiro de Software",
-      "atividade": "Desenvolver api de integraçoes com servicos externos",
-      "inicio": "12/12/2014",
-      "termino": "atual"
-    }
-  ],
+{
+    "formacao": [
+        {
+            "instituicao": "ficr",
+            "curso": "ADS",
+            "inicio": "05/02/2018",
+            "termino": "31/12/2019"
+        }
+    ],
+    "experiencia_profissional": []
+}

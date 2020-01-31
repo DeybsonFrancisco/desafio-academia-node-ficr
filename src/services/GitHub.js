@@ -1,8 +1,10 @@
 const Axios = require("axios");
 
-const getGitHubUser = async user => {
+const getGitHubUser = async () => {
     try {
-        const data = await Axios.get(`https://api.github.com/users/${user}`);
+        const data = await Axios.get(
+            `https://api.github.com/users/${process.env.USER_GIT}`
+        );
         return data.data;
     } catch (err) {
         return err;
@@ -11,7 +13,7 @@ const getGitHubUser = async user => {
 const getGitHubRepo = async user => {
     try {
         const data = await Axios.get(
-            `https://api.github.com/users/${user}/repos?direction=desc`
+            `https://api.github.com/users/${process.env.USER_GIT}/repos?direction=desc`
         );
         return data.data;
     } catch (err) {
