@@ -24,7 +24,7 @@ exports.getCurriculo = async (req, res, next) => {
             company
         };
 
-        const data = result[1];
+     /*   const data = result[1];
         console.log(data);
 
         const filterRepo = data.map(obj => {
@@ -45,7 +45,7 @@ exports.getCurriculo = async (req, res, next) => {
             }
         });
         const [rep1, rep2, rep3] = orderRepos;
-        const repositories = [rep1, rep2, rep3];
+        const repositories = [rep1, rep2, rep3]; /*
 
         const { name, birthday, email, location, gender } = result[2];
         const userFace = {
