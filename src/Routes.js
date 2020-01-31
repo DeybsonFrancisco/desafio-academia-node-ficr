@@ -7,8 +7,8 @@ const app = Router();
 app.get("/api/curriculo", CurriculoController.getCurriculo);
 
 app.use(NotFound);
-/* app.use((err, req, res, next) => {
+app.use((err, req, res, next) => {
     if (!err.statusCode) err.statusCode = 500;
     ErrorHandler.errorHandle(err, res);
-}); */
+});
 module.exports = app;
