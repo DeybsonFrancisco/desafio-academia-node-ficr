@@ -28,6 +28,7 @@ exports.getCurriculo = async (req, res, next) => {
                 company
             };
         }
+        console.log(userGit);
         if (!result[1].response) {
             repositories = result[1];
 
