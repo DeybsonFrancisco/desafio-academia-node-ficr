@@ -14,8 +14,6 @@ exports.getCurriculo = async (req, res, next) => {
                 path: path.resolve(__dirname, "..", "..", "formacao.json")
             })
         ]);
-
-        console.log(result[1]);
         // eslint-disable-next-line camelcase
         const { avatar_url, html_url, company, bio } = result[0];
         const userGit = {

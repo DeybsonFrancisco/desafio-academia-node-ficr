@@ -1,4 +1,3 @@
-const Axios = require("axios");
 const Octokit = require("@octokit/rest");
 
 const octokit = new Octokit({
