@@ -15,53 +15,46 @@ exports.getCurriculo = async (req, res, next) => {
             })
         ]);
 
-        let userGit, repositories, userFace;
+        // eslint-disable-next-line camelcase
+        const { avatar_url, html_url, company, bio } = result[0];
+        const userGit = {
+            avatar_url,
+            html_url,
+            bio,
+            company
+        };
 
-        if (!result[0].response) {
-            // eslint-disable-next-line camelcase
-            const { name, avatar_url, html_url, company, bio } = result[0];
-            userGit = {
-                name,
-                avatar_url,
-                html_url,
-                bio,
-                company
+        const data = result[1];
+
+        const filterRepo = data.map(obj => {
+            return {
+                size: obj.size,
+                name: obj.name,
+                url: obj.html_url
             };
-        }
-        console.log(userGit);
-        if (!result[1].response) {
-            repositories = result[1];
+        });
 
-            const filterRepo = repositories.map(obj => {
-                return {
-                    size: obj.size,
-                    name: obj.name,
-                    url: obj.html_url
-                };
-            });
+        const orderRepos = filterRepo.sort((a, b) => {
+            if (a.size < b.size) {
+                return 1;
+            } else if (a.size > b.size) {
+                return -1;
+            } else {
+                return 0;
+            }
+        });
+        const [rep1, rep2, rep3] = orderRepos;
+        const repositories = [rep1, rep2, rep3];
 
-            const orderRepos = filterRepo.sort((a, b) => {
-                if (a.size < b.size) {
-                    return 1;
-                } else if (a.size > b.size) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            });
-            const [rep1, rep2, rep3] = orderRepos;
-            repositories = [rep1, rep2, rep3];
-        }
-        if (!result[2].response) {
-            const { name, birthday, email, location, gender } = result[2];
-            userFace = {
-                name,
-                birthday,
-                email,
-                location: location.name,
-                gender
-            };
-        }
+        const { name, birthday, email, location, gender } = result[2];
+        const userFace = {
+            name,
+            birthday,
+            email,
+            location: location.name,
+            gender
+        };
+
         const infoExp = result[3];
 
         return res.status(200).json({
